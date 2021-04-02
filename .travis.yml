@@ -1,9 +1,8 @@
 os: osx
 language: dart
 dart_task:
-  - test: --platform vm
   - test: --platform ios
-before_script:
+before_install:
   - cd ..
   - git clone https://github.com/flutter/flutter.git
   - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
