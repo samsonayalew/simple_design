@@ -1,5 +1,6 @@
 os: osx
 language: dart
+osx_image: xcode12.2
 dart_task:
   - test: --platform ios
 before_install:
