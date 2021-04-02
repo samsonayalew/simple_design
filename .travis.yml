@@ -12,7 +12,7 @@ script:
   - cd $TRAVIS_BUILD_DIR
   - flutter pub get
 #  - flutter test
-  - flutter/bin/flutter build ios --debug
+  - flutter build ios --debug
 cache:
   directories:
     - $HOME/.pub-cache
