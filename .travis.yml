@@ -1,5 +1,9 @@
 os: osx
 language: dart
+language: dart
+dart_task:
+  - test: --platform vm
+  - test: --platform ios
 before_script:
   - brew update
   - brew install --HEAD usbmuxd
@@ -12,6 +16,7 @@ before_script:
   - ./flutter/bin/flutter doctor
   - gem install coveralls-lcov
 script:
+  - flutter pub get
   - flutter/bin/flutter build ios --debug --no-codesign
 cache:
   directories:
