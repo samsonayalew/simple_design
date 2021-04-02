@@ -10,10 +10,8 @@ before_install:
 script:
   - cd $TRAVIS_BUILD_DIR
   - flutter pub get
-  - flutter analyze --no-pub --no-current-package lib
   - flutter test
-  - flutter packages pub publish --dry-run
-  - flutter/bin/flutter build ios --debug --no-codesign
+  - flutter/bin/flutter build ios --debug
 cache:
   directories:
     - $HOME/.pub-cache
