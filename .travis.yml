@@ -1,12 +1,16 @@
 os: osx
 language: dart
-language: dart
 dart_task:
   - test: --platform vm
   - test: --platform ios
+before_script:
+  - cd ..
+  - git clone https://github.com/flutter/flutter.git
+  - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
+  - flutter doctor
 script:
   - cd $TRAVIS_BUILD_DIR
-  - flutter packages get
+  - flutter pub get
   - flutter analyze --no-pub --no-current-package lib
   - flutter test
   - flutter packages pub publish --dry-run
